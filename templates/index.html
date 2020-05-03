@@ -1,0 +1,47 @@
+<! –– Craeted by Shehan Jayalath ––>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style> img {display: block;margin-left: auto; margin-right: auto;}</style>
+  </head>
+  <body bgcolor="#EEE7DD">
+  	<div>    
+	    <img src="{{url_for('static', filename='logo.png')}}" width=100 height=100 class="center" />
+	    <center><h3>Created by Shehan Jayalath</h3></center>
+	</div>    	
+    <div>
+      <div id="chatbox">
+        <p class="botText"><span>Hi! How can I help you?</span></p>
+      </div>
+      <div id="userInput">
+        <input id="textInput" type="text" autofocus="autofocus" name="msg" placeholder="Message">
+        <input id="buttonInput" type="submit" value="Send">
+      </div>
+      <script>
+        function getBotResponse() {
+          var rawText = $("#textInput").val();
+          var userHtml = '<p class="userText"><span>' + rawText + '</span></p>';
+          $("#textInput").val("");
+          $("#chatbox").append(userHtml);
+          document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          $.get("/get", { msg: rawText }).done(function(data) {
+            var botHtml = '<p class="botText"><span>' + data + '</span></p>';
+            $("#chatbox").append(botHtml);
+            document.getElementById('userInput').scrollIntoView({block: 'start', behavior: 'smooth'});
+          });
+        }
+        $("#textInput").keypress(function(e) {
+            if(e.which == 13) {
+                getBotResponse();
+            }
+        });
+        $("#buttonInput").click(function() {
+          getBotResponse();
+        })
+      </script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+ /*Created By  Shehan Jayalath*/
+
+body {
+    font-family: Garamond;
+    /*font-family: Samsung Sans;*/
+}
+
+
+#chatbox {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 60px;
+}
+
+#userInput {
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 60px;
+}
+
+#textInput {
+    width: 87%;
+    border: none;
+    border-bottom: 3px solid #007c5b;
+    font-family: monospace;
+    /*font-family: Samsung Sans;*/
+    font-size: 17px;
+}
+
+#buttonInput {
+    padding: 3px;
+    font-family: monospace;
+    /*font-family: Samsung Sans;*/
+    font-size: 17px;
+}
+
+.userText {
+    color: black;
+    font-family: monospace;
+    /*font-family: Samsung Sans;*/
+    font-size: 17px;
+    text-align: right;
+    line-height: 30px;
+}
+
+.userText span {
+    background-color: #E2FFC9;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.botText {
+    color: black;
+    font-family: monospace;
+    /*font-family: Samsung Sans;*/
+    font-size: 17px;
+    text-align: left;
+    line-height: 30px;
+}
+
+.botText span {
+    background-color: #D3EBF4;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+#tidbit {
+    position:absolute;
+    bottom:0;
+    right:0;
+    width: 300px;
+}
