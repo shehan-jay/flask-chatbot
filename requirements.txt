@@ -1,4 +1,4 @@
-Flask==1.0.2
+Flask==2.3.2
 ChatterBot==0.8.7
 template-render==0.1.0
 request==1.0.2
